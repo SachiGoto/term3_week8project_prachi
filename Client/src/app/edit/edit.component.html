@@ -1,0 +1,88 @@
+<!-- <p>edit works!</p> -->
+
+<div class="container mt-5">
+  <h2>Edit</h2>
+
+  <div class="mb-3">
+      <label for="description" class="form-label">Description</label>
+      <input [(ngModel)]="description" type="text" class="form-control" id="description" aria-describedby="emailHelp">
+  </div>
+  <div class="mb-3">
+      <label for="price" class="form-label">Price</label>
+      <input [(ngModel)]="price" type="number" class="form-control" id="price">
+  </div>
+  <div class="mb-3">
+      <label for="productTitle" class="form-label">Product Title</label>
+      <input [(ngModel)]="title" type="text" class="form-control" id="productTitle">
+  </div>
+  <div class="mb-3">
+      <label for="product_image" class="form-label">Product Image</label>
+      <input [(ngModel)]="image" type="text" class="form-control" id="product_image" aria-describedby="emailHelp">
+  </div>
+
+  <div class="mb-3">
+      <label for="stockAvailability" class="form-label">Stock Availability</label>
+      <input [(ngModel)]="stockAvailability" type="number" class="form-control" id="stockAvailability">
+  </div>
+
+  <label for="#">Online/Offline: </label>
+  <select [(ngModel)] ="display" id="#">
+    <option value="offline">Offline</option>
+    <option value="online">Online</option>
+
+  </select>
+  <br>
+
+  <!-- <div class="form-check form-switch">
+    <label for="flexSwitchCheckDefault" class="form-label">Offline or Live</label>
+    <input (click)="toggleBtn()" class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+</div> -->
+
+  <button  class="cta ms-3" (click)="deleteItem()" routerLink="/edit">Delete</button>
+  <button (click)="edit()" class="btn btn-primary">Update</button>
+  <!-- <button (click)="delete()" class="btn btn-danger">Delete</button> | -->
+  <!-- <a routerLink="/admin"> Back to Admin Panel</a> -->
+  <div *ngIf="updateStatus" [style.display]="showMessage" [class.success]="updateStatus">Update successfull!
+  </div>
+  <div *ngIf="!updateStatus" [style.display]="showMessage" [class.error]="!updateStatus">Sorry, Something went wrong. Server responded with {{errorMessage.sqlMessage}}
+  </div>
+</div>
+
+
+<!-- <h1>Edit</h1>
+
+<div class="input-group mb-3">
+
+  <div class="input-group">
+    <span class="input-group-text">Description</span>
+    <textarea class="form-control" aria-label="With textarea"></textarea>
+  </div>
+
+
+  <div class="input-group">
+    <span class="input-group-text">Price</span>
+    <textarea class="form-control" aria-label="With textarea"></textarea>
+  </div>
+
+
+  <div class="input-group">
+    <span class="input-group-text">Product Title</span>
+    <textarea class="form-control" aria-label="With textarea"></textarea>
+  </div>
+
+
+  <div class="input-group">
+    <span class="input-group-text">Product Image</span>
+    <textarea class="form-control" aria-label="With textarea"></textarea>
+  </div>
+
+
+  <div class="input-group">
+    <span class="input-group-text">Stock Availability</span>
+    <textarea class="form-control" aria-label="With textarea"></textarea>
+  </div>
+
+  <button type="button" class="btn btn-danger">Ok</button>
+
+  </div> -->
+

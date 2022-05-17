@@ -1,0 +1,73 @@
+
+
+# @url = http://localhost:4600
+
+# All products
+GET http://localhost:4600/productssp
+
+###
+
+# login
+POST http://localhost:4600/login 
+Content-Type: application/json
+
+{
+"email": "prachi@vanarts.com", 
+"password": "1"
+}
+
+###
+
+# admin to show all products
+GET http://localhost:4600/admin
+
+
+###
+
+# add products
+POST  http://localhost:4600/addnewproduct 
+Content-Type: application/json
+
+{
+"productTitle": "new product",
+"product_image":"new image",
+"description": "new description",
+"price":"1234", 
+"stockAvailability":"1",
+"display":"online"
+
+}
+
+
+
+###
+
+# edit
+
+
+PUT  http://localhost:4600/edit
+Content-Type: application/json
+
+
+{
+"description": "(changed) This is for testing",
+"ID":"21", 
+"price":"123", 
+"productTitle":"abc",
+"product_image":"changed", 
+"stockAvailability":"1",
+"display":"online"
+
+}
+
+###
+
+# delete
+DELETE  http://localhost:4600/deleteproduct/14
+# Content-Type: application/json
+
+
+
+###
+
+GET  http://localhost:4600/onlineproducts

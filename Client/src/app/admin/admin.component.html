@@ -1,0 +1,42 @@
+<!-- <p>admin works!</p> -->
+<h1> Admin Portal </h1>
+<div class="container mt-5 mb-5">
+
+  <button routerLink="/newproduct" > Add new produts</button>
+
+  <div class="row">
+
+      <div class="col-lg-4" *ngFor="let object of adminproductList">
+
+          <div class="typeproduct mt-3 mb-3">
+              <img [src]="object.product_image">
+              <h1>{{object.productTitle}}</h1>
+              <p>{{object.description}}</p>
+              <p>{{object.stockAvailability}}</p>
+              <p>{{object.price | currency : 'CAD'}}</p>
+            <p>Status:  {{object.display}}</p>
+
+
+
+
+              <br/>
+
+              <button [routerLink]="['/products/', object.ID]" type ="button" class="btn btn-danger">Edit</button>
+
+              <!-- forgot to put / after products  -->
+
+            <!-- <button type ="button" class="btn btn-danger">Edit</button> -->
+
+
+
+
+
+
+
+          </div>
+
+      </div>
+
+  </div>
+
+</div>
